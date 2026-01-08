@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Basketball — Lengkap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mini Basketball — Lengkap</h1>
+    <div class="topRow">
+      <div class="hud">
+        <div>Skor: <strong id="scoreVal">0</strong></div>
+        <div>Attempt: <strong id="attemptsVal">0</strong></div>
+        <div>Combo: <strong id="comboVal">0</strong></div>
+        <div>Multiplier: <strong id="multVal">x1</strong></div>
+        <div id="timerWrap">Waktu: <strong id="timerVal">--</strong></div>
+      </div>
+      <div class="actions">
+        <button id="modeBtn">Mode: Casual</button>
+        <button id="muteBtn">🔊</button>
+        <button id="fsBtn">⛶</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="gameArea">
+      <div id="canvasWrap">
+        <canvas id="gameCanvas" aria-label="Lapangan basket"></canvas>
+        <div id="uiOverlay">
+          <div id="hint">Tarik bola lalu lepaskan untuk menembak (mouse / touch). Tekan R untuk reset, Space untuk ambil ulang.</div>
+          <div id="powerMeter" aria-hidden="true"><div id="powerBar"></div></div>
+        </div>
+      </div>
+      <aside id="sidePanel">
+        <section class="panel">
+          <h3>Leaderboard (Top 10)</h3>
+          <ol id="leaderboardList"></ol>
+          <div class="panelRow">
+            <button id="saveScoreBtn">Simpan Skor</button>
+            <button id="clearBoardBtn">Hapus Leaderboard</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h3>Mode Waktu</h3>
+          <div class="panelRow">
+            <button id="startTimedBtn">Mulai 60s</button>
+            <button id="stopTimedBtn" disabled>Hentikan</button>
+          </div>
+          <p class="small">Mode Arcade menambah gravitasi kecil & skor lebih tinggi.</p>
+        </section>
+
+        <section class="panel">
+          <h3>Kontrol</h3>
+          <ul>
+            <li>Drag / Touch: tarik & lepaskan untuk menembak</li>
+            <li>Space: ambil ulang bola (jika diam)</li>
+            <li>R: Reset skor & game</li>
+            <li>M: Mute</li>
+            <li>F: Fullscreen</li>
+          </ul>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <small>Semua suara dihasilkan oleh Web Audio. Leaderboard disimpan di localStorage. Tidak perlu koneksi internet.</small>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
